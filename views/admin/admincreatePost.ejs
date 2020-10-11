@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Onijekuje Lagos</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta name="author" content="" />
+
+  <!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+	
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+	
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="/adminPublic/css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="/adminPublic/css/icomoon.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="/adminPublic/css/bootstrap.css">
+
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="/adminPublic/css/magnific-popup.css">
+
+	<!-- Flexslider  -->
+	<link rel="stylesheet" href="/adminPublic/css/flexslider.css">
+	<!-- Owl Carousel -->
+	<link rel="stylesheet" href="/adminPublic/css/owl.carousel.min.css">
+	<link rel="stylesheet" href="/adminPublic/css/owl.theme.default.min.css">
+
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="/adminPublic/css/style.css">
+	<!-- Modernizr JS -->
+	<script src="/adminPublic/js/modernizr-2.6.2.min.js"></script>
+	<!--admin styling -->
+	<link rel="stylesheet" href="/adminPublic/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="/adminPublic/vendors/base/vendor.bundle.base.css">
+	<link rel="stylesheet" href="/adminPublic/csss/style.css">
+    <link rel="shortcut icon" href="/adminPublic/images/favicon.png" />
+	</head>
+    
+<body>
+        
+    <div id="page">
+        <%- include('adminPartials/nav'); -%>
+        <div class="container-scroller">
+            <div class="container-fluid page-body-wrapper">
+                <div class="main-panel">
+                    <div class="content-wrapper">
+                        <div class="row">
+                            <div class="col-md-12 grid-margin stretch-card">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title">New Post</h4>
+                                        <p class="card-description">
+                                            Enter Post Details
+                                        </p>
+                                        <form class="forms-sample" action="/admin/blog" method="post">
+                                        <div class="form-group">
+                                        <label for="title">Post Title</label>
+                                        <input type="text" class="form-control" id="exampleInputUsername1 title" name="title" placeholder="Title">
+                                        </div>
+                                        <div class="form-group">
+                                        <label for="coverImage"> coverImage(Link)</label>
+                                        <input type="text" class="form-control" id="exampleInputEmail1 coverImage"  name="coverImage"        placeholder="Link">
+                                        </div>
+                                        <div class="form-group">
+                                        <label for="introText">Short preview for post</label>
+                                        <input type="text" class="form-control" name="introText" id="exampleInputConfirmPassword1 introText" placeholder="Introductory Text">
+                                        </div>
+                                        <div class="form-group">
+                                        <label for="newpost">POST(put actual post here)</label>
+                                        <textarea name="newpost" id="editor" cols="80" rows="10">
+                                            &lt;p&gt;Initial editor content.&lt;/p&gt;
+                                        </textarea>
+                                        </div>
+                                        <div class="form-group">
+                                        <label for="featured">Featured Post</label>
+                                        <input type="checkbox" name="featured" id="featured">
+                                        </div>
+                
+                                        <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                                        <button class="btn btn-light">Cancel</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <script src="https://cdn.tiny.cloud/1/8d70t180vjz98lqcpzn1p79fydbhgghd89rby8ela9cd6ts0/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+        <script>
+            //froala editor
+           //var editor = new FroalaEditor('#editor', {
+               //imageUploadURL: 'http://127.0.0.1:8000/api/v1/blog',
+            //   ImageUploadMethod: 'POST',
+            //   imageAllowedTypes: ['jpeg', 'jpg', 'png', 'webp', 'gif']
+           //})
+           tinymce.init({
+                selector: '#editor',  // change this value according to your HTML
+                toolbar:  ' code undo redo styleselect bold italic alignleft aligncenter alignright bullist numlist outdent indent code image fontselect fontsizeselect emoticons fullscreen link media wordcount',
+                plugins : ' autoresize advlist link image lists code imagetools paste emoticons fullscreen link media wordcount',
+                menubar: 'view insert',
+                image_caption: true
+            });
+        </script>
+    <script src="/adminPublic/vendors/base/vendor.bundle.base.js"></script>
+    <script src="/adminPublic/jss/template.js"></script>
+    <script src="/adminPublic/vendors/chart.js/Chart.min.js"></script>
+    <script src="/adminPublic/vendors/progressbar.js/progressbar.min.js"></script>
+	<script src="/adminPublic/vendors/chartjs-plugin-datalabels/chartjs-plugin-datalabels.js"></script>
+	<script src="/adminPublic/vendors/justgage/raphael-2.1.4.min.js"></script>
+	<script src="/adminPublic/vendors/justgage/justgage.js"></script>
+    <script src="/adminPublic/jss/dashboard.js"></script>
+    <%- include('adminpartials/scripts'); -%>
+</body>
+</html>
